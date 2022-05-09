@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 12000,
+      "quantity": 600,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Computer Mac",
+      "price": 15000,
+      "quantity": 60,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "ToothPaste",
+      "price": 25,
+      "quantity": 500,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Wallet",
+      "price": 7541,
+      "quantity": 12,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Bike",
+      "price": 120000,
+      "quantity": 52,
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "Iphone",
+      "price": 150000,
+      "quantity": 2,
+      "selected": true,
+      "available": true,
+      "id": 6
+    }
+  ]
+}

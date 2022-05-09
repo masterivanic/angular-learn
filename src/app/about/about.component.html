@@ -1,0 +1,21 @@
+<p>about works!</p>
+
+<ul>
+  <li>Nom :: {{ info.nom }}</li>
+  <li>Email: {{ info.email}}</li>
+  <li>Tel: {{ info.tel }}</li>
+</ul>
+<div>
+  <input type="text" [(ngModel)]="comment.message")]>
+  <button (click)="addComment()" [disabled]="newComment">Add comment</button>
+</div>
+
+<div *ngIf="comments.length>0">
+  <h3>Liste des messages</h3>
+  <ul>
+    <li *ngFor="let c of comments">
+        {{ c.id }} : {{ c.message }}
+    </li>
+  </ul>
+
+</div>

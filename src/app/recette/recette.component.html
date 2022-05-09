@@ -1,0 +1,348 @@
+<div class="container">
+  <div class="row">
+    <p style="margin-top: 200px; margin-bottom: 30px" class="text text-center">
+      RECETTES
+    </p>
+  </div>
+  <div class="row">
+    <div *ngFor="let obj of recetteRoutes" style="margin: 0 auto; width: 100%">
+      <a type="button" class="link-primary col-sm-2" (click)="setActive(obj.isActive)">
+        {{ obj.routeName | uppercase }}
+      </a>
+    </div>
+  </div>
+
+  <!-- realisation des recettes -->
+  <div *ngIf="active==1" style="margin-top: 30px">
+    <form class="form">
+      <div class="form-group">
+        <label for="exercice">Exercice</label>
+        <select class="form-control" id="exercice" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cas">C.A.S</label>
+        <select class="form-control" id="cas" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="compteDepotTresor">Compte Dépot Trésor</label>
+        <select class="form-control" id="compteDepotTresor" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="natureRecette">Nature de recette</label>
+        <select class="form-control" id="natureRecette" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+
+      <div class="form-inline">
+        <div class="form-group mb-2">
+          <label for="2018" class="col-sm-2">2018</label>
+          <input class="form-control" min="0" id="2018" type="number" /><span class="fcfa">FCFA</span>
+        </div>
+        <div class="form-group mb-2">
+          <label for="2019" class="col-sm-2">2019</label>
+          <input class="form-control" min="0" id="2019" type="number" /><span class="fcfa">FCFA</span>
+        </div>
+        <div class="form-group mb-2">
+          <label for="2020" class="col-sm-2">2020</label>
+          <input class="form-control" min="0" id="2020" type="number" /><span class="fcfa">FCFA</span>
+        </div>
+        <div class="form-group mt-5" style="margin-bottom: 15px; margin-top: 3px;">
+          <label for="2021" class="col-sm-2">2021</label>
+          <input id="2021" min="0" class="form-control" type="number" /><span class="fcfa">FCFA</span>
+        </div>
+      </div>
+
+      <div class="action-btn">
+        <button class="btn btn-success" type="submit">Enregister</button>
+        <button class="btn btn-default" type="submit">Modifier</button>
+        <button class="btn btn-danger" type="submit">Supprimer</button>
+      </div>
+    </form>
+
+    <div class="recette-result">
+      <table class="table">
+        <thead>
+          <tr>
+            <th  scope="col">Nature de la recette</th>
+            <th  scope="col">2018</th>
+            <th  scope="col">2019</th>
+            <th  scope="col">2020</th>
+            <th  scope="col">2021</th>
+          </tr>
+        </thead>
+
+        <tr>
+          <td scope="row">null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- cadrage des recettes -->
+  <div *ngIf="active==2" style="margin-top: 30px">
+    <form class="form">
+      <div class="form-group">
+        <label for="exerciceCadrage">Exercice</label>
+        <select class="form-control" id="exerciceCadrage" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="casCadrage">C.A.S</label>
+        <select class="form-control" id="casCadrage" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="compteDepotTresorCadrage">Compte Dépot Trésor</label>
+        <select class="form-control" id="compteDepotTresorCadrage" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="estimationLF">Estimation LF 2021</label>
+        <input type="number" id="estimationLF" /> <span>FCFA</span>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <span class="col-sm-1">2022</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+          <span class="col-sm-1">2023</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+          <span class="col-sm-1">2024</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+        </div>
+      </div>
+      <div class="action-btn">
+        <button class="btn btn-success" type="submit">Enregister</button>
+        <button class="btn btn-default" type="submit">Modifier</button>
+        <button class="btn btn-danger" type="submit">Supprimer</button>
+      </div>
+    </form>
+
+    <div class="recette-result">
+      <table class="table">
+        <tr>
+          <th>CAS</th>
+          <th>2022</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>Estimation LF 2021</th>
+        </tr>
+        <tr>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- detail des previsions des recettes -->
+  <div *ngIf="active==3" style="margin-top: 30px">
+    <form class="form">
+      <div class="form-group">
+        <label for="exerciceDetails">Exercice</label>
+        <select class="form-control" id="exerciceDetails" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="casDetails">C.A.S</label>
+        <select class="form-control" id="casDetails" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="natureRecetteDetails">Nature de recette</label>
+        <select class="form-control" id="natureRecetteDetails" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="estimationLFDetails">Estimation LF 2021</label>
+        <input type="number" id="estimationLFDetails" /> <span>FCFA</span>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <span class="col-sm-1">2022</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+          <span class="col-sm-1">2023</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+          <span class="col-sm-1">2024</span
+          ><input class="col-sm-2" type="number" /><span>FCFA</span>
+        </div>
+      </div>
+      <div class="action-btn">
+        <button class="btn btn-success" type="submit">Enregister</button>
+        <button class="btn btn-default" type="submit">Modifier</button>
+        <button class="btn btn-danger">Supprimer</button>
+      </div>
+    </form>
+    <div class="recette-result">
+      <table class="table">
+        <tr>
+          <th>Nature de la recette</th>
+          <th>2022</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>Estimation LF 2021</th>
+        </tr>
+        <tr>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+          <td>null</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- edition des recettes -->
+  <div *ngIf="active==4" style="margin-top: 30px">
+    <form class="form">
+      <div class="form-group">
+        <label for="exercicEdition">Exercice</label>
+        <select class="form-control" id="exercicEdition" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+
+    <div class="form-group">
+      <label for="casEdition">C.A.S</label>
+      <select class="form-control" id="casEdition" required>
+        <option value="---">--</option>
+        <option value="power">Budget 20222</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <div class="row print-link">
+        <a> {{ realisationRecette | uppercase }} </a>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row print-link">
+        <a> {{ cadrageRecette | uppercase }} </a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row print-link">
+        <a> {{ detailsPrevision | uppercase }} </a>
+      </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- nature des recettes -->
+  <div *ngIf="active==5" style="margin-top: 30px">
+    <form class="form">
+      <div class="form-group">
+        <label for="exerciceNature">Exercice</label>
+        <select class="form-control" id="exerciceNature" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="casNature">C.A.S</label>
+        <select class="form-control" id="casNature" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="typeRecette">Type de recette</label>
+        <select class="form-control" id="typeRecette" required>
+          <option value="---">--</option>
+          <option value="power">Budget 20222</option>
+        </select>
+      </div>
+
+    <div class="form-group"  [hidden]="isTextareaFr">
+      <label for="natureRecetteFr">Nature de la recette</label>
+      <textarea class="form-control" id="natureRecetteFr" rows="3"></textarea>
+    </div>
+    <div class="form-group" [hidden]="isTextareaEn">
+      <label for="natureRecetteEn">Nature de la recette</label>
+      <textarea class="form-control" id="natureRecetteEn" rows="3"></textarea>
+    </div>
+
+    <div class="checkIsFr form-inline">
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" (click)="clickFr()" value="fr"  type="radio" name="language" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1" style="margin-right: 10px;">
+            Francais
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" (click)="clickEn()" value="en" type="radio" name="language" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Anglais
+          </label>
+        </div>
+      </div>
+      <div class="libelle">
+          <span *ngIf="isTextareaFr == false" class="libelle-fr" style="font-weight: bold;">Fr</span>
+          <span *ngIf="isTextareaEn == false" class="libelle-en" style="font-weight: bold;">En</span>
+      </div>
+    </div>
+    <div class="action-btn">
+      <button class="btn btn-success" type="submit">Enregister</button>
+      <button class="btn btn-default" type="submit">Modifier</button>
+      <button class="btn btn-danger">Supprimer</button>
+    </div>
+    </form>
+
+    <div class="recette-result">
+       <table class="table">
+         <thead>
+           <tr>
+             <th scope="col">N°</th>
+             <th scope="col">Libellé francais</th>
+             <th scope="col">Libellé anglais</th>
+             <th scope="col">Type recette</th>
+           </tr>
+         </thead>
+         <tr>
+           <th>null</th>
+           <th>null</th>
+           <th>null</th>
+           <th>null</th>
+         </tr>
+       </table>
+    </div>
+  </div>
+</div>

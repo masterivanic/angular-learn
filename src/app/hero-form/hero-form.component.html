@@ -1,0 +1,50 @@
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1 class="text-text-center">Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      {{ model | json }}
+      <div class="form-group mt-20">
+        <label for="name">Name</label>
+        <input type="text" #name="ngModel" class="form-control" id="name" required [(ngModel)]="model.name" name="name" >
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Hero power</label>
+        <select class="form-control" id="power" required>
+          <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-default" (click)=" newHero(); heroForm.reset()">purchase</button>
+      <button type="submit" class="btn-btn-success" [disabled]="!heroForm.form.valid">submit</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div hidden="false">
+      <p>Hello World</p>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9">{{ model.power }}</div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+
+</div>
